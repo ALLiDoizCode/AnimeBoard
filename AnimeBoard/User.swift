@@ -7,33 +7,24 @@
 //
 
 import UIKit
-import SwiftHTTP
+import Alamofire
 
 ///Authincation
 func userAuth(Banner:UIImageView,mainImage:UIImageView,smallImage:UIImageView,UserName:UILabel,userInfo:UILabel,ActivityInfo:UILabel,timeFrame:UILabel,animeDays:UILabel,mangaChp:UILabel){
-    var request = HTTPTask()
-    //we have to add the explicit type, else the wrong type is inferred. See the vluxe.io article for more info.
-    let params: Dictionary<String,AnyObject> = ["grant_type": "client_credentials", "client_id":"di3twater-1nxqk", "client_secret": "f9S24EMx8mgcPTsZcWKBdT"]
-    request.POST("https://anilist.co/api/auth/access_token", parameters: params, success: {(response: HTTPResponse) in
-        if let data = response.responseObject as? NSData {
-            let json = JSON(data:data)
-            let accessToken:String = json["access_token"].stringValue!
-            println(accessToken)
-            Favorite(accessToken)
-            userGet(accessToken,Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
-        }
-        
-        },failure: {(error: NSError, response: HTTPResponse?) in
-            
-    })
+    Alamofire.request(.POST, "https://anilist.co/api/auth/access_token", parameters: parameters)
+        .responseJSON { (request, response, jsonData, error) in
+            let json = JSON(object: jsonData!)
+            let accessToken = json["access_token"].stringValue
+            //Favorite(accessToken)
+            userGet(accessToken!,Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
+    }
 }
 
 ///User Get
 func userGet(Token:String,Banner:UIImageView,mainImage:UIImageView,smallImage:UIImageView,UserName:UILabel,userInfo:UILabel,ActivityInfo:UILabel,timeFrame:UILabel,animeDays:UILabel,mangaChp:UILabel){
-    var request = HTTPTask()
-    request.GET("https://anilist.co/api/user/Josh", parameters: ["access_token":"\(Token)","page": "1"], success: {(response: HTTPResponse) in
-        if let data = response.responseObject as? NSData {
-            var json = JSON(data:data)
+    Alamofire.request(.GET, "https://anilist.co/api/user/Josh", parameters: ["access_token":"\(Token)"])
+        .responseJSON { (request, response, jsonData, error) in
+            var json = JSON(object:jsonData!)
             ///images
             var imageBig = json["image_url_lge"].stringValue
             var imageSmall = json["image_url_med"].stringValue
@@ -57,20 +48,13 @@ func userGet(Token:String,Banner:UIImageView,mainImage:UIImageView,smallImage:UI
             Banner.image = bgBanner
             
         }
-        },failure: {(error: NSError, response: HTTPResponse?) in
-            println("error: \(error)")
-    })
-}
+    
 
 ///Get Search Results
 func Favorite(Token:String){
-    var request = HTTPTask()
-    request.GET("https://anilist.co/api/user/Josh/favourites", parameters: ["access_token":"\(Token)"], success: {(response: HTTPResponse) in
-        if let data = response.responseObject as? NSData {
-            //let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-            //println("response: \(str)") //prints the HTML of the page
-            var json = JSON(data:data)
-            
+    Alamofire.request(.GET, "https://anilist.co/api/user/Josh/favourites", parameters: ["access_token":"\(Token)"])
+        .responseJSON { (request, response, jsonData, error) in
+            var json = JSON(object:jsonData!)
             var animeValue = json["anime"].arrayValue
             var animeCount = animeValue?.count
             println("\(animeValue?.count)")
@@ -83,11 +67,6 @@ func Favorite(Token:String){
                     favImage.image = bgFav
             
             }
-            
         }
-        },failure: {(error: NSError, response: HTTPResponse?) in
-            println("error: \(error)")
-    })
+    }
 }
-
-

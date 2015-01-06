@@ -48,10 +48,8 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
-        //userAuth(Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
-        apiAuth(mainImage,Banner,ran)
+        userAuth(Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
+        //apiAuth(mainImage,Banner,ran)
         //searchAuth()
     }
 

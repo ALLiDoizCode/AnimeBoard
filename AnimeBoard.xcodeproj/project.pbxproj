@@ -16,6 +16,8 @@
 		82ACCED31A54A1BB0068D1C4 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCECC1A54A1BB0068D1C4 /* RAMTransitionItemAnimation.swift */; };
 		82ACCED41A54A1BB0068D1C4 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCECD1A54A1BB0068D1C4 /* RAMAnimatedTabBarController.swift */; };
 		82ACCED51A54A1BB0068D1C4 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCECE1A54A1BB0068D1C4 /* RAMItemAnimationProtocol.swift */; };
+		82F176A31A5C7FFB00E90552 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F176A01A5C7FBC00E90552 /* Alamofire.framework */; };
+		82F176A41A5C7FFB00E90552 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F176A01A5C7FBC00E90552 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82F31E921A4C81D1008274A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F31E911A4C81D1008274A5 /* User.swift */; };
 		82FE995F1A47AD46009BDC6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FE995E1A47AD46009BDC6E /* AppDelegate.swift */; };
 		82FE99621A47AD46009BDC6E /* AnimeBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82FE99601A47AD46009BDC6E /* AnimeBoard.xcdatamodeld */; };
@@ -31,33 +33,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		82C6C07A1A5B57F40007761A /* PBXContainerItemProxy */ = {
+		82F1769F1A5C7FBC00E90552 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */;
+			containerPortal = 82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
-			remoteInfo = SwiftHTTP;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
 		};
-		82C6C07C1A5B57F40007761A /* PBXContainerItemProxy */ = {
+		82F176A11A5C7FBC00E90552 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */;
+			containerPortal = 82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
-			remoteInfo = SwiftHTTPTests;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
 		};
-		82C6C07E1A5B57F40007761A /* PBXContainerItemProxy */ = {
+		82F176A51A5C7FFB00E90552 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958025919E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSX;
-		};
-		82C6C0801A5B57F40007761A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958026319E6EEEB003C8218;
-			remoteInfo = SwiftHTTPOSXTests;
+			containerPortal = 82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
 		};
 		82FE99721A47AD46009BDC6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -67,6 +62,20 @@
 			remoteInfo = AnimeBoard;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82F176A81A5C7FFB00E90552 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82F176A41A5C7FFB00E90552 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		825538901A59CB8900CC55B4 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
@@ -78,7 +87,7 @@
 		82ACCECC1A54A1BB0068D1C4 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
 		82ACCECD1A54A1BB0068D1C4 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
 		82ACCECE1A54A1BB0068D1C4 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
-		82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = "Libraries/SwiftHTTP-master/SwiftHTTP.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Libraries/Alamofire-master/Alamofire.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		82F31E911A4C81D1008274A5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		82FE99591A47AD46009BDC6E /* AnimeBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82FE995D1A47AD46009BDC6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,10 +107,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		82FE99561A47AD46009BDC6E /* Frameworks */ = {
+		82F176A71A5C7FFB00E90552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F176A31A5C7FFB00E90552 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,13 +187,11 @@
 			path = TransitionAniamtions;
 			sourceTree = "<group>";
 		};
-		82C6C0741A5B57F40007761A /* Products */ = {
+		82F1769B1A5C7FBC00E90552 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82C6C07B1A5B57F40007761A /* SwiftHTTP.framework */,
-				82C6C07D1A5B57F40007761A /* SwiftHTTPTests.xctest */,
-				82C6C07F1A5B57F40007761A /* SwiftHTTPOSX.framework */,
-				82C6C0811A5B57F40007761A /* SwiftHTTPOSXTests.xctest */,
+				82F176A01A5C7FBC00E90552 /* Alamofire.framework */,
+				82F176A21A5C7FBC00E90552 /* AlamofireTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 		82FE99501A47AD46009BDC6E = {
 			isa = PBXGroup;
 			children = (
+				82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */,
 				82FE995B1A47AD46009BDC6E /* AnimeBoard */,
 				82FE99741A47AD46009BDC6E /* AnimeBoardTests */,
 				82FE995A1A47AD46009BDC6E /* Products */,
@@ -209,7 +218,6 @@
 		82FE995B1A47AD46009BDC6E /* AnimeBoard */ = {
 			isa = PBXGroup;
 			children = (
-				82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */,
 				82ACCEC11A54A1BB0068D1C4 /* RAMAnimatedTabBarController */,
 				82F31E911A4C81D1008274A5 /* User.swift */,
 				825538901A59CB8900CC55B4 /* Favorites.swift */,
@@ -262,12 +270,14 @@
 			buildConfigurationList = 82FE997B1A47AD46009BDC6E /* Build configuration list for PBXNativeTarget "AnimeBoard" */;
 			buildPhases = (
 				82FE99551A47AD46009BDC6E /* Sources */,
-				82FE99561A47AD46009BDC6E /* Frameworks */,
 				82FE99571A47AD46009BDC6E /* Resources */,
+				82F176A71A5C7FFB00E90552 /* Frameworks */,
+				82F176A81A5C7FFB00E90552 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				82F176A61A5C7FFB00E90552 /* PBXTargetDependency */,
 			);
 			name = AnimeBoard;
 			productName = AnimeBoard;
@@ -323,8 +333,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 82C6C0741A5B57F40007761A /* Products */;
-					ProjectRef = 82C6C0731A5B57F40007761A /* SwiftHTTP.xcodeproj */;
+					ProductGroup = 82F1769B1A5C7FBC00E90552 /* Products */;
+					ProjectRef = 82F1769A1A5C7FBC00E90552 /* Alamofire.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -336,32 +346,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		82C6C07B1A5B57F40007761A /* SwiftHTTP.framework */ = {
+		82F176A01A5C7FBC00E90552 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = SwiftHTTP.framework;
-			remoteRef = 82C6C07A1A5B57F40007761A /* PBXContainerItemProxy */;
+			path = Alamofire.framework;
+			remoteRef = 82F1769F1A5C7FBC00E90552 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		82C6C07D1A5B57F40007761A /* SwiftHTTPTests.xctest */ = {
+		82F176A21A5C7FBC00E90552 /* AlamofireTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SwiftHTTPTests.xctest;
-			remoteRef = 82C6C07C1A5B57F40007761A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		82C6C07F1A5B57F40007761A /* SwiftHTTPOSX.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftHTTPOSX.framework;
-			remoteRef = 82C6C07E1A5B57F40007761A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		82C6C0811A5B57F40007761A /* SwiftHTTPOSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftHTTPOSXTests.xctest;
-			remoteRef = 82C6C0801A5B57F40007761A /* PBXContainerItemProxy */;
+			path = AlamofireTests.xctest;
+			remoteRef = 82F176A11A5C7FBC00E90552 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -422,6 +418,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		82F176A61A5C7FFB00E90552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 82F176A51A5C7FFB00E90552 /* PBXContainerItemProxy */;
+		};
 		82FE99731A47AD46009BDC6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 82FE99581A47AD46009BDC6E /* AnimeBoard */;
@@ -532,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AnimeBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AnimeBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
