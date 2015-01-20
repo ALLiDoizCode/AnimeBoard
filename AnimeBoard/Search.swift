@@ -31,7 +31,7 @@ func apiSearch(Token:String){
 
 
 // Class: urlInfo to be seen through all Classes
-/*class AuthInfo {
+class AuthInfo {
     // Class function: Return URL request so we only need to define it once in code
     class func getAuth() -> NSURLRequest {
         var url: NSURL? = NSURL(string: "https://anilist.co/api/auth/access_token")
@@ -39,4 +39,4 @@ func apiSearch(Token:String){
         
         return urlRequest!
     }
-}*/
+}

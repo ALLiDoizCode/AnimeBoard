@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		825538911A59CB8900CC55B4 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825538901A59CB8900CC55B4 /* Favorites.swift */; };
-		825538931A59D10D00CC55B4 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825538921A59D10D00CC55B4 /* CustomTableViewCell.xib */; };
+		82514AAD1A64DC6D00287DA4 /* favInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82514AAC1A64DC6D00287DA4 /* favInfo.swift */; };
+		82710A411A6E096500DA2101 /* StumbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82710A401A6E096500DA2101 /* StumbleViewController.swift */; };
+		82710A431A6E09E400DA2101 /* StumblecellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82710A421A6E09E400DA2101 /* StumblecellTableViewCell.swift */; };
+		82710A461A6E0B6C00DA2101 /* Stum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82710A451A6E0B6C00DA2101 /* Stum.swift */; };
 		82ACCECF1A54A1BB0068D1C4 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCEC41A54A1BB0068D1C4 /* RAMBounceAnimation.swift */; };
 		82ACCED01A54A1BB0068D1C4 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCEC61A54A1BB0068D1C4 /* RAMFrameItemAnimation.swift */; };
 		82ACCED11A54A1BB0068D1C4 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACCEC81A54A1BB0068D1C4 /* RAMFumeAnimation.swift */; };
@@ -78,8 +80,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		825538901A59CB8900CC55B4 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
-		825538921A59D10D00CC55B4 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		82514AAC1A64DC6D00287DA4 /* favInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favInfo.swift; sourceTree = "<group>"; };
+		82710A401A6E096500DA2101 /* StumbleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StumbleViewController.swift; sourceTree = "<group>"; };
+		82710A421A6E09E400DA2101 /* StumblecellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StumblecellTableViewCell.swift; sourceTree = "<group>"; };
+		82710A451A6E0B6C00DA2101 /* Stum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stum.swift; sourceTree = "<group>"; };
 		82ACCEC41A54A1BB0068D1C4 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
 		82ACCEC61A54A1BB0068D1C4 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		82ACCEC81A54A1BB0068D1C4 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
@@ -125,6 +129,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82710A441A6E0AA900DA2101 /* Stumble */ = {
+			isa = PBXGroup;
+			children = (
+				82FE99AC1A487ACD009BDC6E /* GetAnime.swift */,
+				82710A401A6E096500DA2101 /* StumbleViewController.swift */,
+				82710A421A6E09E400DA2101 /* StumblecellTableViewCell.swift */,
+				82710A451A6E0B6C00DA2101 /* Stum.swift */,
+			);
+			name = Stumble;
+			sourceTree = "<group>";
+		};
 		82ACCEC11A54A1BB0068D1C4 /* RAMAnimatedTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,16 +233,15 @@
 		82FE995B1A47AD46009BDC6E /* AnimeBoard */ = {
 			isa = PBXGroup;
 			children = (
+				82710A441A6E0AA900DA2101 /* Stumble */,
 				82ACCEC11A54A1BB0068D1C4 /* RAMAnimatedTabBarController */,
 				82F31E911A4C81D1008274A5 /* User.swift */,
-				825538901A59CB8900CC55B4 /* Favorites.swift */,
 				82FE99AE1A487BFA009BDC6E /* Search.swift */,
-				82FE99AC1A487ACD009BDC6E /* GetAnime.swift */,
 				82FE99A01A47E0C7009BDC6E /* RAMPaperSwitch.swift */,
 				82FE99901A47AE6C009BDC6E /* SwiftyJSON.swift */,
 				82FE995E1A47AD46009BDC6E /* AppDelegate.swift */,
 				82FE99631A47AD46009BDC6E /* ViewController.swift */,
-				825538921A59D10D00CC55B4 /* CustomTableViewCell.xib */,
+				82514AAC1A64DC6D00287DA4 /* favInfo.swift */,
 				82FE99651A47AD46009BDC6E /* Main.storyboard */,
 				82FE99681A47AD46009BDC6E /* Images.xcassets */,
 				82FE996A1A47AD46009BDC6E /* LaunchScreen.xib */,
@@ -369,7 +383,6 @@
 			files = (
 				82FE99671A47AD46009BDC6E /* Main.storyboard in Resources */,
 				82FE996C1A47AD46009BDC6E /* LaunchScreen.xib in Resources */,
-				825538931A59D10D00CC55B4 /* CustomTableViewCell.xib in Resources */,
 				82FE99691A47AD46009BDC6E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,12 +409,15 @@
 				82ACCED41A54A1BB0068D1C4 /* RAMAnimatedTabBarController.swift in Sources */,
 				82ACCED21A54A1BB0068D1C4 /* RAMRotationAnimation.swift in Sources */,
 				82F31E921A4C81D1008274A5 /* User.swift in Sources */,
+				82514AAD1A64DC6D00287DA4 /* favInfo.swift in Sources */,
+				82710A461A6E0B6C00DA2101 /* Stum.swift in Sources */,
 				82ACCED31A54A1BB0068D1C4 /* RAMTransitionItemAnimation.swift in Sources */,
 				82FE99911A47AE6C009BDC6E /* SwiftyJSON.swift in Sources */,
+				82710A411A6E096500DA2101 /* StumbleViewController.swift in Sources */,
 				82FE99AD1A487ACD009BDC6E /* GetAnime.swift in Sources */,
 				82ACCED01A54A1BB0068D1C4 /* RAMFrameItemAnimation.swift in Sources */,
+				82710A431A6E09E400DA2101 /* StumblecellTableViewCell.swift in Sources */,
 				82ACCED11A54A1BB0068D1C4 /* RAMFumeAnimation.swift in Sources */,
-				825538911A59CB8900CC55B4 /* Favorites.swift in Sources */,
 				82FE99AF1A487BFA009BDC6E /* Search.swift in Sources */,
 				82ACCED51A54A1BB0068D1C4 /* RAMItemAnimationProtocol.swift in Sources */,
 			);

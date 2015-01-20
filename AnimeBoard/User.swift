@@ -9,14 +9,16 @@
 import UIKit
 import Alamofire
 
+
 ///Authincation
-func userAuth(Banner:UIImageView,mainImage:UIImageView,smallImage:UIImageView,UserName:UILabel,userInfo:UILabel,ActivityInfo:UILabel,timeFrame:UILabel,animeDays:UILabel,mangaChp:UILabel){
+ func userAuth(Banner:UIImageView,mainImage:UIImageView,smallImage:UIImageView,UserName:UILabel,userInfo:UILabel,ActivityInfo:UILabel,timeFrame:UILabel,animeDays:UILabel,mangaChp:UILabel){
     Alamofire.request(.POST, "https://anilist.co/api/auth/access_token", parameters: parameters)
         .responseJSON { (request, response, jsonData, error) in
             let json = JSON(object: jsonData!)
             let accessToken = json["access_token"].stringValue
             //Favorite(accessToken)
             userGet(accessToken!,Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
+            
     }
 }
 
@@ -47,26 +49,27 @@ func userGet(Token:String,Banner:UIImageView,mainImage:UIImageView,smallImage:UI
             var bgBanner = UIImage(data: NSData(contentsOfURL: NSURL(string:imageBanner!)!)!)
             Banner.image = bgBanner
             
-        }
-    
+            //// calling Favorite func
+            favorite(Token)
+    }
+   
+}
 
 ///Get Search Results
-func Favorite(Token:String){
+  func  favorite (Token:String){
+    var favAnime:[String] = []
     Alamofire.request(.GET, "https://anilist.co/api/user/Josh/favourites", parameters: ["access_token":"\(Token)"])
         .responseJSON { (request, response, jsonData, error) in
             var json = JSON(object:jsonData!)
             var animeValue = json["anime"].arrayValue
             var animeCount = animeValue?.count
-            println("\(animeValue?.count)")
+            //println("\(animeValue?.count)")
             for var i = 0; i < animeCount; i++ {
-                    var favImage = UIImageView()
-                    var imageData = json["anime"][i]["image_url_med"].stringValue
-                    favImage.frame = CGRect(x: 30, y: 100, width: 61, height: 96)
-                    var bgFav = UIImage(data: NSData(contentsOfURL: NSURL(string:imageData!)!)!)
-                    println(imageData)
-                    favImage.image = bgFav
+                var imageData = json["anime"][i]["image_url_med"].stringValue
+                ViewController(favAnime.append(imageData!))
             
             }
+            
         }
-    }
 }
+

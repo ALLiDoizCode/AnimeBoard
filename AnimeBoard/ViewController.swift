@@ -7,29 +7,33 @@
 //
 
 import UIKit
+import Alamofire
+
 var anime:String = "bleach"
 
-var ran = Int(arc4random_uniform(20000)+1)
-
-class CustomeTableViewCell: UITableViewCell{
-
-    
-    @IBOutlet var backgroundImage: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-}
+//var favAnime:[String] = []
 
 class ViewController: UIViewController{
+    
+var favAnime:[String] = []
+    
+///////OUTLETS/////////
+    
+    ///Views///
+    
+    
+    
     ///Image
-    @IBOutlet var imageTableView: UITableView!
+    
+    
+    @IBOutlet weak var fav: UICollectionView!
     
     @IBOutlet weak var Banner: UIImageView!
     
     @IBOutlet weak var mainImage: UIImageView!
     
     @IBOutlet weak var smallImage: UIImageView!
-    
-    //@IBOutlet weak var animeImage: UIImageView!
-    ///Views
+
     
     ///Labels
     @IBOutlet weak var UserName: UILabel!
@@ -43,14 +47,20 @@ class ViewController: UIViewController{
     @IBOutlet weak var animeDays: UILabel!
     
     @IBOutlet weak var mangaChp: UILabel!
+///////OUTLETS END/////////
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
         userAuth(Banner,mainImage,smallImage,UserName,userInfo,ActivityInfo,timeFrame,animeDays,mangaChp)
         //apiAuth(mainImage,Banner,ran)
         //searchAuth()
+        
+        
+        //println(favAnime)
     }
 
     override func didReceiveMemoryWarning() {

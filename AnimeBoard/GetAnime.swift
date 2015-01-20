@@ -9,19 +9,20 @@
 import UIKit
 import Alamofire
 
+
 let parameters = ["grant_type": "client_credentials", "client_id":"di3twater-1nxqk", "client_secret": "f9S24EMx8mgcPTsZcWKBdT"]
 
 ///Authincation
-func apiAuth(Image:UIImageView,bannerInfo:UIImageView,num:Int){
+func apiAuth(StumbleTable: UITableView!,num:Int){
     Alamofire.request(.POST, "https://anilist.co/api/auth/access_token", parameters: parameters)
         .responseJSON { (request, response, jsonData, error) in
             let json = JSON(object: jsonData!)
             let accessToken = json["access_token"].stringValue
-            apiGet(accessToken!,Image,bannerInfo,num)
+            apiGet(accessToken!,StumbleTable,num)
     }
 }
 //////Get anime/////
-func apiGet(Token:String,Image:UIImageView,bannerInfo:UIImageView,num:Int){
+ func apiGet(Token:String,StumbleTable: UITableView!,num:Int){
     var filter:String? = "Comedy"
     var filterSum:Int = 0
     var f = 0
@@ -34,6 +35,7 @@ func apiGet(Token:String,Image:UIImageView,bannerInfo:UIImageView,num:Int){
         var youtube:String? = json["youtube_id"].stringValue
         var gArray2 = gArray?.count
         for var i = 0; i < gArray2; i++ {
+            var stumData:Stum = Stum()
             var compare = json["genres"][i].stringValue
             println(compare)
             if compare == filter {
@@ -46,15 +48,14 @@ func apiGet(Token:String,Image:UIImageView,bannerInfo:UIImageView,num:Int){
                     ////imageLoop////
                     if imageInfo != nil && compare != "Hentai"{
                         var bgImage = UIImage(data: NSData(contentsOfURL: NSURL(string:imageInfo!)!)!)
-                        Image.image = bgImage
-                        //banner
-                        /*var bnImage = UIImage(data: NSData(contentsOfURL: NSURL(string:bannerdata!)!)!)
-                        bannerInfo.image = bnImage*/
+                        
+                    
+                        StumbleTable.reloadData()
                         
                     }else{
                         println("image is nil")
                         var ran = Int(arc4random_uniform(9000)+1)
-                        apiGet(Token,Image,bannerInfo,ran)
+                        apiGet(Token,StumbleTable,ran)
                     }
                     ////imageLoop////
                 }
@@ -64,7 +65,7 @@ func apiGet(Token:String,Image:UIImageView,bannerInfo:UIImageView,num:Int){
         if f != 1 {
             println("filter does not match")
             var ran = Int(arc4random_uniform(9000)+1)
-            apiGet(Token,Image,bannerInfo,ran)
+            apiGet(Token,StumbleTable,ran)
             
         }
         
